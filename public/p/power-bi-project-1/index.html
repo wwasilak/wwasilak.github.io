@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='COVID-19 in regions of Poland'><title>Power Bi - Project 1</title>
+
+<link rel='canonical' href='https://wwasilak.github.io/p/power-bi-project-1/'>
+
+<link rel="stylesheet" href="/scss/style.min.0bdda44424a0308b7f594abdbdba92200908585a69dfcb82b692037dd2995de4.css"><meta property='og:title' content='Power Bi - Project 1'>
+<meta property='og:description' content='COVID-19 in regions of Poland'>
+<meta property='og:url' content='https://wwasilak.github.io/p/power-bi-project-1/'>
+<meta property='og:site_name' content='Wojciech Wasilak'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Power Bi' /><meta property='article:tag' content='project' /><meta property='article:tag' content='report' /><meta property='article:published_time' content='2022-05-06T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2022-05-06T00:00:00&#43;00:00'/><meta property='og:image' content='https://wwasilak.github.io/p/power-bi-project-1/alfa.jpg' />
+<meta name="twitter:title" content="Power Bi - Project 1">
+<meta name="twitter:description" content="COVID-19 in regions of Poland"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://wwasilak.github.io/p/power-bi-project-1/alfa.jpg' />
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/Wojtek_hu6cfb1185b03a5facd42e0d7665437ff3_47690_300x0_resize_box_3.png" width="300"
+                            height="321" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">Wojciech Wasilak</a></h1>
+            <h2 class="site-description">Simple data projects with Power Bi.</h2>
+        </div>
+    </header><ol class="social-menu">
+            
+                <li>
+                    <a 
+                        href='https://github.com/wwasilak'
+                        target="_blank"
+                        title="GitHub"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://www.linkedin.com/in/wojciechwasilak/'
+                        target="_blank"
+                        title="LinkedIn"
+                    >
+                        
+                        
+                            <?xml version="1.0" ?><!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'><svg height="67px" id="Layer_1" style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="67px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M49.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H49.837z M21.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H21.959z M33,64  C16.432,64,3,50.568,3,34C3,17.431,16.432,4,33,4s30,13.431,30,30C63,50.568,49.568,64,33,64z M25.354,48.137V27.71h-6.789v20.427  H25.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:#D8D9D8;"/></svg>
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/about/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+
+        <div class="menu-bottom-section">
+            
+            
+                <li id="dark-mode-toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <span>Dark Mode</span>
+                </li>
+            
+        </div>
+    </ol>
+</aside>
+<main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/power-bi-project-1/">
+                <img src="/p/power-bi-project-1/alfa_hu0a1aac429974ebac1b9861534fa1c8d4_72818_800x0_resize_q75_box.jpg"
+                        srcset="/p/power-bi-project-1/alfa_hu0a1aac429974ebac1b9861534fa1c8d4_72818_800x0_resize_q75_box.jpg 800w, /p/power-bi-project-1/alfa_hu0a1aac429974ebac1b9861534fa1c8d4_72818_1600x0_resize_q75_box.jpg 1600w"
+                        width="800" 
+                        height="366" 
+                        loading="lazy"
+                        alt="Featured image of post Power Bi - Project 1" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/power-bi-project-1/">Power Bi - Project 1</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            COVID-19 in regions of Poland
+        </h3>
+        
+    </div>
+
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">May 06, 2022</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    4 minute read
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+</header>
+
+    <section class="article-content">
+    
+    
+    <h3 id="description">Description</h3>
+<p>In my first project using Power Bi, I wanted to show the COVID-19 pandemic situation in 16 Polish regions. I focused on 3 parameters: <strong>cases</strong>, <strong>deaths</strong> and <strong>vaccinations</strong>. At first my main motivation for using covid data was to create ridgeline plot using DENEB custom visual where I could show a comparison between all regions in a very clear way – unfortunately it is very hard to do in Vega Lite, so I decided to concentrate on report creation with simpler, out of the box visuals. Apart from that I wanted to follow best practices of data modelling.</p>
+<iframe src="https://app.powerbi.com/view?r=eyJrIjoiMmZkNDBkNjYtODMzYy00MjBhLWI5NDEtOWE1YmQ3ZTZlYjliIiwidCI6IjNjN2VkZjljLTY2YzktNGZlMC1hNDk1LWY1YTVjNzY0OWMxZSIsImMiOjN9&amp;pageName=ReportSection" title="COVID - regions FULL" width="600" height="373.5" frameborder="0" allowFullScreen="true"></iframe>
+<h3 id="data-sources">Data sources</h3>
+<ol>
+<li>COVID-19 dataset maintained by Michał Rogalski –  <a class="link" href="https://docs.google.com/spreadsheets/d/1ierEhD6gcq51HAm433knjnVwey4ZE5DCnu1bW7PRG3E/edit"  target="_blank" rel="noopener"
+    >COVID-19 w Polsce - Arkusze Google</a></li>
+<li>Vaccinations dataset maintained by Michał Rogalski and Andrzej Wisłocki - <a class="link" href="https://docs.google.com/spreadsheets/d/19DqluO7mmKrheqBDRD2ZFM2ZLSi4YTW2nwLbPHkiTYU/edit#gid=0"  target="_blank" rel="noopener"
+    >COVID-19 w Polsce - Szczepienia - Arkusze Google</a></li>
+<li>Regions population and surface area - <a class="link" href="https://stat.gov.pl/obszary-tematyczne/ludnosc/ludnosc/powierzchnia-i-ludnosc-w-przekroju-terytorialnym-w-2021-roku,7,18.html"  target="_blank" rel="noopener"
+    >Główny Urząd Statystyczny / Obszary tematyczne / Ludność / Ludność / Powierzchnia i ludność w przekroju terytorialnym w 2021 roku</a></li>
+</ol>
+<p>Connection with first two sources was established using Power Query’s Google Sheets connector. Third source was downloaded and accessed via Power Query through ‘from csv’ option. For all three sources I used <strong>import</strong> mode.</p>
+<h3 id="data-model">Data model</h3>
+<p><img src="/p/power-bi-project-1/model1.png"
+	width="1271"
+	height="871"
+	srcset="/p/power-bi-project-1/model1_huf95664e20f127d3708dbf7fb63313cda_205299_480x0_resize_box_3.png 480w, /p/power-bi-project-1/model1_huf95664e20f127d3708dbf7fb63313cda_205299_1024x0_resize_box_3.png 1024w"
+	loading="lazy"
+	
+		alt="Data model"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="145"
+		data-flex-basis="350px"
+	
+></p>
+<p>My goal was to create a simple star-schema model so that writing DAX measures would be easier. I ended up with 5 tables:</p>
+<ol>
+<li>Disease Data (<strong>fact</strong>) – main fact table only with keys and region-level numbers</li>
+<li>Vaccinations Details Poland (<strong>fact</strong>) – second fact table with specific country-level data for vaccinations (which cannot be calculated form main fact table)</li>
+<li>Dates (<strong>dimension</strong>) – calendar table created in Power Query</li>
+<li>Region (<strong>dimension</strong>) – dimension table with regions data</li>
+<li>Region_NameList (<strong>dimension</strong>) – disconnected table used only for measures based on slicer selection.</li>
+</ol>
+<p>As sources are not updated on regular basis (last update on 10th of March 2022) I decided to not include a ‘last refresh date stamp’ in the report and not schedule a refresh in Power Bi service.</p>
+<h3 id="what-have-i-learned">What have I learned</h3>
+<h4 id="1power-query">1.	Power Query</h4>
+<ul>
+<li>Data cleaning with several transformations using GUI: transpose, pivot, unpivot, replace values etc.</li>
+<li>Building calendar table with parameters (hardcoded dates – next time I want them dynamic)</li>
+<li>Reversing running totals using index columns (most of data for cases, deaths and vaccinations had to be recalculated from running totals)</li>
+<li>Adding surrogate keys in PQ through merging tables to replace strings in fact table and thus optimize data model</li>
+</ul>
+<h4 id="2data-modelling">2.	Data modelling:</h4>
+<ul>
+<li>Using DAX Studio to analyze model metrics and check if there are some major problems with column size, cardinality etc.</li>
+<li>Using scripts in Tabular Editor 2.0 to hide unnecessary columns, format DAX, add measures (totals) to numeric columns and also measure descriptions (some with standard descriptions and some with DAX measure as a description). I wanted to create folders also but finally decided to leave it as it is. I ended up with ‘clean’ fact tables where only explicit measures are visible.</li>
+<li>Separating data model from report – I made a thin report from published dataset using live connection. Unfortunately I needed to remade the whole report because of that as live-connected reports cannot be published to the web. Again with Tabular Editor’s help it was not a very tiresome task.</li>
+</ul>
+<h4 id="3report-building">3.	Report building</h4>
+<ul>
+<li>Using navigation pane, buttons, bookmarks, drill through.</li>
+<li>Editing visuals’ colors with conditional formatting to enhance clarity.</li>
+<li>Writing dynamic measures that were dependent on slicer selection (here the disconnected table proved useful).</li>
+<li>Trying some more advanced DAX measures with variables.</li>
+<li>For most visuals I decided to turn header icons off to reduce the noise.</li>
+</ul>
+<h3 id="summary">Summary</h3>
+<p>Working on this project was enjoyable for me and I learned a lot! I only scraped the surface when it comes to Tabular Editor but already see a great potential in this tool – need to know all its capabilities. Same with DAX Studio.</p>
+<p>Working on thin reports is not that easy as I thought – data model must be carefully designed as some changes are not possible after uploading to PB Service. I think it is great option when there are multiple report creators.</p>
+<p>I used mostly basic visuals and would really like to dive deeper into more advanced data visualization techniques (especially learn DENEB).</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/power-bi/">Power Bi</a>
+        
+            <a href="/tags/project/">project</a>
+        
+            <a href="/tags/report/">report</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+     
+    
+        
+    <div class="disqus-container">
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "hugo-theme-stack" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<style>
+    .disqus-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+</style>
+
+<script>
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (DISQUS) {
+            DISQUS.reset({
+                reload: true
+            });
+        }
+    })
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2022 Wojciech Wasilak
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.11.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css"integrity="sha256-c0uckgykQ9v5k&#43;IqViZOZKc47Jn7KQil4/MP3ySA3F8="crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css"integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE="crossorigin="anonymous"
+            >
+
+            </main>
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">Table of contents</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li>
+      <ol>
+        <li><a href="#description">Description</a></li>
+        <li><a href="#data-sources">Data sources</a></li>
+        <li><a href="#data-model">Data model</a></li>
+        <li><a href="#what-have-i-learned">What have I learned</a>
+          <ol>
+            <li><a href="#1power-query">1.	Power Query</a></li>
+            <li><a href="#2data-modelling">2.	Data modelling:</a></li>
+            <li><a href="#3report-building">3.	Report building</a></li>
+          </ol>
+        </li>
+        <li><a href="#summary">Summary</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>
